@@ -1,0 +1,79 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,400;1,700&display=swap'); /* Importando uma fonte específica do google fonts */
+
+
+
+* /* Universal selector */
+{
+    box-sizing: border-box; /* margins and padding dont count to width/height of the element */
+}
+
+body {
+    font-family: "roboto", sans-serif;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* does not show scroll bars on the page */
+    margin: 0;
+}
+
+.container {
+    display: flex; /* makes cards in the same row */
+    width: 90vh; /* diferent way of putting some margin */
+
+}
+
+.panel /* I have two classes, "pannel active" and "pannel", this selects both  */
+{
+    background-size: auto 100%; /* makes the BG show the entire image (video said to try cover) */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 100px;
+    color: white;
+    cursor: pointer;
+    flex: 0.5; /* HOW TO MODIFY WIDTH OF FLEX ITENS (here it's making all elements be even */
+    margin: 10px;
+    position: relative; /* in order to make the text in the next container absolute position this relative is needed in the container  */
+    transition-property: flex 0.7s ease-in;
+}
+
+.panel h3 {
+    border-radius: 50px;
+    background-color: black;
+    padding: 10px;
+    font-size: 24px;
+    font-weight:lighter;
+    font-style: italic;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active /* How to select two word classes */
+{
+    flex: 10;
+    transition: flex ease-in-out 0.8s;    
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px)
+{
+    .container {
+        width: 100vw;
+    }
+    
+    .panel:nth-of-type(4), .panel:nth-of-type(4) /* Selecting the last two elements inside .pannel (and using a , to use more selectors in the same statement */
+    {
+        display: none;
+    }
+}
