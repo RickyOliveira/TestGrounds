@@ -12,68 +12,132 @@
 
 body {
     font-family: "roboto", sans-serif;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden; /* does not show scroll bars on the page */
+    background-image: url(/IMG_3851-1.jpg); /* LOLOVSKY */
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow-x: hidden; /* no horizontal scroll, only vertical */
     margin: 0;
+    color: #222; /* Cor do texto */   
 }
 
 .container {
-    display: flex; /* makes cards in the same row */
-    width: 90vh; /* diferent way of putting some margin */
-
+    background-color: #fff;  /* Cor do container do site que vai esconder o fundo */
+    transform-origin: top left;
+    transition: transform 0.4s linear;
+    width: 100vw; /* segurar o container dentro do viewport */
+    min-height: 100vh; /* segurar a altura minima dentro do viewport */
+    padding: 50px;
 }
 
-.panel /* I have two classes, "pannel active" and "pannel", this selects both  */
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+    
+}
+
+.content h1 {
+    margin: 20px 0px;
+}
+
+content p{
+    color: #333;
+    line-height: 1.5px;
+}
+
+.content img {
+    max-width: 100%;
+}
+
+.container.show-nav /* Se a classe container também tiver o show-nav que o JS vai adicionar */
 {
-    background-size: auto 100%; /* makes the BG show the entire image (video said to try cover) */
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 80vh;
-    border-radius: 100px;
-    color: white;
-    cursor: pointer;
-    flex: 0.5; /* HOW TO MODIFY WIDTH OF FLEX ITENS (here it's making all elements be even */
-    margin: 10px;
-    position: relative; /* in order to make the text in the next container absolute position this relative is needed in the container  */
-    transition-property: flex 0.7s ease-in;
+    transform: rotate(-75deg);
 }
 
-.panel h3 {
-    border-radius: 50px;
-    background-color: black;
-    padding: 10px;
-    font-size: 24px;
+.circle-container {
+    position: fixed;
+    top: -150px;
+    left: -150px;
+}
+
+.circle {
+    background-color: #222;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.4s linear;
+}
+
+.circle button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 150px;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.circle button:focus {
+    outline: none;
+}
+
+/* CRAZY POSITIONING TO ENABLE ROTATION */
+
+.circle button#open {
+    left:60%
+}
+
+.circle button#close{
+    top: 60%;
+    transform: rotate(62deg);
+    transform-origin: top left;
+    
+}
+
+/* CRAZY POSITIONING TO ENABLE ROTATION */
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 40px;
+}
+
+nav ul li {
+    margin: 30px 0px;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+    text-transform: uppercase;
+    font-size: 32px;
     font-weight:lighter;
     font-style: italic;
-    position: absolute;
-    bottom: 20px;
-    left: 50px;
-    margin: 0;
-    opacity: 0;
 }
 
-.panel.active /* How to select two word classes */
+nav ul li+li {
+    margin-left: 60px;
+    transform: translateX(-200%);  
+}
+
+nav ul li+li+li {
+    margin-left: 120px; 
+    transform: translateX(-320%); 
+}
+
+nav ul li i:before {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.container.show-nav + nav li  /* HERE IS THE MAGIC, THIS SELECTOR WORKS AS AN IF TO SHOW THE NAVIGATION */
 {
-    flex: 10;
-    transition: flex ease-in-out 0.8s;    
-}
-
-.panel.active h3 {
-    opacity: 1;
-    transition: opacity 0.3s ease-in 0.4s;
-}
-
-@media (max-width: 480px)
-{
-    .container {
-        width: 100vw;
-    }
-    
-    .panel:nth-of-type(4), .panel:nth-of-type(4) /* Selecting the last two elements inside .pannel (and using a , to use more selectors in the same statement */
-    {
-        display: none;
-    }
+    transform: translateX(0);
+    transition-delay: 0.3s;
 }
