@@ -1,77 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Onboarding Chatbot</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rotating Navigation</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <link rel="stylesheet" href="./CssSTYLE.css">
-</head>
-
-<body>
+  <body style="margin: 50px">
+    <h1>Onboarding para Chatbot One</h1>
 
     <div class="container">
+      <div class="row">
+        <div class="etapas" id="menu">
+          <div class="etapaNome" onclick="AtivaCliente()">
+            <span class="circulo" id="Cliente"></span>
+            <h4>Cliente</h4>
+          </div>
 
-        <div class="circle-container">
+          <div class="etapaNome" onclick="AtivaCs()">
+            <span class="circulo" id="CS"></span>
+            <h4>Suporte</h4>
+          </div>
 
-            <div class="circle">
+          <div class="etapaNome" onclick="AtivaDev()">
+            <span class="circulo" id="Dev"></span>
+            <h4>Desenvolvimento</h4>
+          </div>
 
-                <button id="close">
-                    <i class="fas fa-times"></i>
-                </button>
+          <div class="etapaNome" onclick="AtivaAdm()">
+            <span class="circulo" id="Adm"></span>
+            <h4>Financeiro</h4>
+          </div>
+        </div>
+      </div>
 
-                <button id="open">
-                    <i class="fas fa-bars"></i>
-                </button>
+      <div class="row">
+        <div id="blocoCliente">
+          <h2>
+            <b>1.</b> Após a finalização da compra do chatbot, precisamos que o
+            o cliente preencha um formulário de pré-cadastro na funcionalidade.
+          </h2>
+
+          <p>
+            <b>•</b> O formulário precisa conter <b>Email</b> do cliente,
+            <b>Nome Fantasia</b> da empresa, endereço de <b>Website</b> e
+            <b>Funcionalidades</b> que o cliente deseja que o bot execute.
+          </p>
+
+          <p>
+            <b>•</b> É necessário enfatizar que o
+            <b
+              >nome Fantasia deve ser o mesmo que o cliente usa para o
+              estabelecimento</b
+            >, pois esse nome será visto pelo cliente do estabelecimento como
+            contato associado ao bot, com selo de empresa verificada do mesmo
+            jeito que pode ser visto nos exemplos do ifood, magalu e americanas
+            mostrados a baixo:
+          </p>
+
+          <div class="imgDiv">
+            <img src="/ExemploVerificado.jpg" alt="Fbb Print" />
+          </div>
+
+          <h2>
+            <b>2.</b> O cliente deve criar ou validar a sua conta no facebook
+            business
+          </h2>
+          <p>
+            <b>•</b> Seguindo o material e documentação disponibilizada, o
+            cliente deve:
+          </p>
+
+          <p>
+            &nbsp&nbsp&nbsp&nbsp - <b>Criar/Acessar</b> a conta Facebook
+            Bussines. (Disponível em
+            <a href="https://business.facebook.com"
+              >https://business.facebook.com</a
+            >
+            )
+          </p>
+
+          <div class="imgDiv">
+            <img src="/FB_Business_Home.jpg" alt="Fbb Print" />
+          </div>
+
+          <p>
+            &nbsp&nbsp&nbsp&nbsp - Obter o <b>Número de ID</b> associado a
+            conta.
+          </p>
+
+          <div class="imgDiv">
+            <img src="/FB_Business_ID.jpg" alt="Fbb Print" />
+          </div>
+
+          <p>
+            &nbsp&nbsp&nbsp&nbsp - <b>Preencher</b> corretamente<b> todas</b> as
+            informações sobre o negócio no perfil do faceoobk business.
+          </p>
+
+          <div class="imgDiv">
+            <img src="/FB_Business_Info.jpg" alt="Fbb Print" />
+          </div>
+
+          <p>
+            &nbsp&nbsp&nbsp&nbsp - <b>Aguardar</b> o facebook fazer a validação
+            das informações preenchidas.
+          </p>
+
+          <div class="imgDiv">
+            <img src="/FB_Business_Verificado.jpg" alt="Fbb Print" />
+          </div>
+
+          <p style="color: #ff0da5">
+            • Sem a validação do facebook sobre as informações do negócio do
+            cliente não é possivel prosseguir conm o processo de criação de bot.
+          </p>
+
+          <p style="color: #ff0da5">
+            • Caso não haja a validação do facebook o problema está na
+            informações preenchidas no perfil do facebook business. Deve-se
+            retornar ao painel de informações e procurar qual pode ser a/as
+            informações inválidas.
+          </p>
+
+          <p>
+            <b>•</b> Temos um material em vídeo auxiliando ao cliente a executar
+            os passoas acima. Esse material pode ser encontrado em:
+            <a href="https://www.youtube.com/watch?v=ZjcJ8AbJaZM"
+              >https://www.youtube.com/watch?v=ZjcJ8AbJaZM</a
+            >
+          </p>
+
+          <h2>
+            <b>3.</b> O cliente deve disponibilizr um número para ser usado como
+            bot. <br />
+            (Exemplo: Comprar um chip de uma operadora qualquer)
+          </h2>
+
+          <p>
+            <b>•</b> Devemos resaltar que o cliente irá
+            <b>perder capacidade de usar</b> diretamente <b>o número</b> que ele
+            fornecer.
+          </p>
+        </div>
+
+        <div id="blocoCs">
+          <h2>
+            <b>1.</b> Consulte a situação do processo de verificação de empresa
+            no facebook business com o cliente.
+          </h2>
+
+          <p>
+            <b>•</b> O estado da verificação pode ser encontrado no painel de
+            informações da conta facebook business:
+          </p>
+
+          <div class="imgDiv">
+            <img src="/FB_Business_Verificado.jpg" alt="Fbb Print" />
+          </div>
+
+          <p>
+            <b>•</b> Se o cliente já possuir cadastro no Facebook Business mas
+            <b>não</b> estiver <b>verificado</b>:
+          </p>
+
+          <p>
+            &nbsp&nbsp&nbsp&nbsp - Peça o número de identificação (<b
+              >Facebook ID</b
+            >) da conta do cliente.
+          </p>
+
+          <p>
+            &nbsp&nbsp&nbsp&nbsp - Faça a orientação de como o cliente pode
+            fazer a verificação da empresa pelo facebook. <br />
+            <b style="font-size: small"
+              >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Veja como acima, na
+              seção "Cliente" deste guia.</b
+            >
+          </p>
+
+          <p>
+            <b>•</b> Se o cliente já possuir cadastro no Facebook Business e
+            <b>está verificado</b>:
+          </p>
+
+          <p>
+            &nbsp&nbsp&nbsp&nbsp - Somente peça o número de identificação (<b
+              >Facebook ID</b
+            >) da conta do cliente.
+          </p>
+
+          <div class="imgDiv">
+            <img src="/FB_Business_ID.jpg" alt="Fbb Print" />
+          </div>
+
+          <h2><b>2.</b> Preenchimento do Formulário de ISV (Twilio).</h2>
+
+          <p>
+            <b>•</b> Com o facebook Id do cliente em mãos é hora de preencher o
+            <b>formulário do ISV</b>.
+          </p>
+
+          <p>
+            &nbsp&nbsp&nbsp&nbsp - disponível em:
+            <a href="https://www.twilio.com/whatsapp/request-access"
+              >https://www.twilio.com/whatsapp/request-access</a
+            >
+          </p>
+
+          <div class="imgDiv">
+            <img src="/Twilio_form.jpg" alt="Fbb Print" />
+          </div>
+
+          <p>
+            <b>•</b> <b>Envie</b> o formulário e <b>aguarde</b> a aprovação da
+            Twilio e do Facebook.
+          </p>
+        </div>
+
+        <div id="blocoDev">
+          <h2><b>1.</b> Configuração de número</h2>
+
+          <p>
+            <b>•</b> No painel da Twilio e dentro da subconta referente deve ser
+            feito o preenchimento de formulário de <b>novo Sender</b>.
+          </p>
+
+          <p>
+            <b>•</b> Esse passo deve ser feito pela equipe de desenvolvimento
+            que cuida da manutenção dos cadastros dos clientes no painel Twilio
+            seguindo o cominho:
+          </p>
+
+          <p>
+            <b
+              >Develop -> Messaging -> WhatsApp senders -> Submit a WhatsApp
+              Sender</b
+            >
+          </p>
+
+          <h2><b>2.</b> Configuração dentro do ONE</h2>
+
+          <p>
+            <b>•</b> É nescessário a configuração dos
+            <b>registros nas tabelas</b> do Whatsapp dentro do One.
+          </p>
+
+          <p><b>•</b> A <b>MobilidadesWhatsApp</b> deve ter:</p>
+
+          <p>
+            &nbsp&nbsp&nbsp&nbsp - Número do cliente. <br />
+            &nbsp&nbsp&nbsp&nbsp - Dados de acesso a subconta no Twilio. <br />
+            &nbsp&nbsp&nbsp&nbsp - País. <br />
+            &nbsp&nbsp&nbsp&nbsp - Taxa de conversão. <br />
+            &nbsp&nbsp&nbsp&nbsp - Dias de confirmação. <br />
+            &nbsp&nbsp&nbsp&nbsp - Horário de confirmação. <br />
+          </p>
+
+          <h2><b>3.</b> Configurar logic apps no Azure</h2>
+
+          <p><b>•</b> Somente se o cliente tiver escolhido essa opção.</p>
+        </div>
+
+        <div id="blocoAdm">
+          <h2><b>1.</b> Cobrança pelo Stripe</h2>
+
+          <p>
+            <b>•</b> Criar no stripe a cobrança recorrente referente ao uso do
+            chatbot pelo cliente.
+          </p>
+
+          <p>
+            &nbsp&nbsp&nbsp&nbsp - <b>Cobrança recorrente</b> de mensalidade
+            pode depender do <b>volume de uso</b> da funcionalidade pelo
+            cliente.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LISTA VELHA DE ITENS
+
+    <ul class="list-group list-group-flush list-group-numbered" style="margin-left: 20px; padding: 30px;">
+
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Compra do bot é feita.</div>
+                • No momento que o cliente faz a compra do chatbot será feito um pré-cadastro dele na funcionalidade.
+            </div>
+
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Formulário de Pré-cadastro.</div>
+                • O formulário irá conter informações que o cliente precisa nos enviar, dentre elas as mais importântes
+                são <b>Email</b>, <b>Nome Fantasia</b> da empresa, endereço de <b>Website</b> e <b>Funcionalidades</b>
+                desejadas (como agendamento ou confirmações de horários para um ou dois dias...) <br>
+                • É necessário enfatizar que o nome fantasia deve ser o mesmo que o cliente usa para o estabelecimento
+                por que esse é o nome que o cliente vai ver associado ao bot.
+            </div>
+        </li>
+
+         
+
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Contato com o cliente</div>
+                • Vamos ser notificados por email quando o cliente efetuar a compra e um colaborador interno deve entrar
+                em contato com o o cliente.
+                <br>• Esse contato deve abordar: <br>
+                <br> &nbsp&nbsp&nbsp&nbsp - A criação do Facebook Business.
+                <br> &nbsp&nbsp&nbsp&nbsp - Como obter o facebook business ID.
+                <br> &nbsp&nbsp&nbsp&nbsp - Enfatização da importância de preeencher corretamente as informações da
+                empresa no perfil do facebook business.
+                <br> &nbsp&nbsp&nbsp&nbsp - Como é feita a verificação da empresa por parte do facebook.
+                <br> &nbsp&nbsp&nbsp&nbsp - Citar a nescessidade que o cliente disponibiliza um número.
+                <br> &nbsp&nbsp&nbsp&nbsp - Explicar que o cliente vai perder a capacidade de usar esse número
+                pessoalmente.
+                <br> &nbsp&nbsp&nbsp&nbsp - Enviar a documentação do facebook business e o vídeo mostrando como é feito
+                esse processo.
+            </div>
+        </li>
+
+         
+
+
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Novo contato com o cliente é feito</div>
+                • Se o cliente já possui cadastro no Facebook Bussines:<br>
+                <br> &nbsp&nbsp&nbsp&nbsp - Peça o número de indentificação do facebook Id da conta do cliente.
+                <br> &nbsp&nbsp&nbsp&nbsp - Oriente o cliente a enviar a sua empresa para a verificação feita pelo
+                facebook.<br>
+                <br>• Se o cliente já possui cadastro no Facebook Bussines e já está verificado:
+                <br> &nbsp&nbsp&nbsp&nbsp - Somente peça o número de indentificação do facebook Id da conta do cliente.
+            </div>
+
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Preencher o formulário do ISV</div>
+                • Com o facebook Id do cliente em mãos é hora de preencher o formulário do ISV
+                <br> &nbsp&nbsp&nbsp&nbsp - disponível em: <a
+                    href="https://www.twilio.com/whatsapp/request-access">https://www.twilio.com/whatsapp/request-access</a>
+                <br> &nbsp&nbsp&nbsp&nbsp - Envie o formulário e aguarde a aprovação da Twilio e do Facebook.
+            </div>
+
+        </li>
+
+        
+
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Configuração do Número.</div>
+                • No painel da Twilio e dentro da subconta referente deve ser feito o preenchimento de formulário de
+                novo Sender.
+                <br>• Esse passo deve ser feito pela equipe de desenvolvimento que cuida da manutenção dos cadastros dos
+                clientes no painel Twilio seguindo o cominho:
+                <br> &nbsp&nbsp&nbsp&nbsp - Develop -> Messaging -> WhatsApp senders -> Submit a WhatsApp Sender
+            </div>
+
+        </li>
+
+
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Configuração dentro do One</div>
+                • É nescessário a configuração dos registros nas tabelas do Whatsapp dentro do One.
+                <br> • A MobilidadesWhatsApp deve ter:
+                <br> &nbsp&nbsp&nbsp&nbsp - Número do cliente.
+                <br> &nbsp&nbsp&nbsp&nbsp - Dados de acesso a subconta no Twilio.
+                <br> &nbsp&nbsp&nbsp&nbsp - País.
+                <br> &nbsp&nbsp&nbsp&nbsp - Taxa de conversão.
+                <br> &nbsp&nbsp&nbsp&nbsp - Dias de confirmação.
+                <br> &nbsp&nbsp&nbsp&nbsp - Horário de confirmação.
 
             </div>
 
-        </div>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Configurar logic apps no Azure</div>
+                • Somente se o cliente tiver escolhido essa opção.
+            </div>
 
-        <div class="content">  <!-- Aqui tá o conteúdo da página -->
+        </li>
 
-            <h1>NESSA PÁGINA HÁ UM LOLO ESCONDIDO</h1>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Cobrança pelo Stripe</div>
+                • Criar no stripe a cobrança recorrente referente ao uso do chatbot pelo cliente.
+                <br> &nbsp&nbsp&nbsp&nbsp - Cobrança recorrente de mensalidade pode depender do volume de uso da
+                funcionalidade pelo cliente.
+            </div>
 
-            <img src="./headerIMG.png" alt="danger">
+        </li>
 
+        </li>
 
-            <p>Não é nesse parágrafo que tem um lolo, adipisicing elit. Dicta, mollitia excepturi. Sed,
-                voluptatibus quo consequatur id quod impedit assumenda temporibus soluta magnam repellat, voluptate,
-                expedita deserunt repellendus. Vitae ratione corrupti quia, iste aperiam alias dolores, magni
-                assumenda fuga voluptatem in laborum distinctio illo saepe provident! Excepturi, iure! Nam totam
-                perspiciatis in saepe repellat MAS PODE SER QUE EU ESTEJA MENTINDO. Aspernatur, assumenda
-                corrupti! Qui veritatis pariatur, veniam odio, exercitationem, iste sed reiciendis dolor labore
-                maxime officia laudantium ipsum consectetur esse maiores facere officiis. Repellat eveniet
-                repudiandae explicabo libero cupiditate aspernatur unde assumenda officiis, accusamus omnis
-                corporis, voluptate possimus! Natus, Real, não é aqui q tá o lolo!!
-            </p>
+    </ul>
 
-            <h1>O LOLO! CADE VC???</h1>
+    -->
 
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, vitae eius iusto minima alias
-                dicta nobis? Itaque, delectus eligendi recusandae mollitia excepturi similique amet accusantium
-                soluta quo possimus. Fugit quo animi distinctio, quod autem quia? Suscipit, et quibusdam autem
-                dolorum nesciunt sint exercitationem consectetur ducimus provident tenetur minima iste animi.
-            </p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab voluptatum deleniti doloremque molestiae dicta dolore rem labore temporibus blanditiis reiciendis dolorum modi tempora hic recusandae quaerat nostrum, nihil consequatur aliquam magni provident, ea consectetur iste porro alias. Quibusdam labore, corporis nesciunt ea commodi quas vitae officiis expedita, repellendus qui sed tenetur. Mollitia inventore beatae rerum deserunt, natus tempore nisi sit quae quos dicta dolore rem illo placeat facere suscipit. Quam deserunt excepturi eum temporibus ex, quia iste quasi eos sapiente. Neque dolor iusto amet nostrum dolores? Corporis ea veniam rerum fuga, ipsa, nemo sed fugiat nesciunt animi amet eveniet expedita?</p>
-
-            <h1>Essa página acaba aquí, o lolo tá pra cima</h1>
-
-        </div>       
-
-    </div>   
-     
-    <nav>   <!-- NAV precisa ficar fora do container show-nav -->
-        <ul>
-            <li>MALDADE</li>
-            <li>OUSADIA</li>
-            <li>BAGUNÇA</li>
-        </ul>
-    </nav>
-
-    <script src="./JavaScript.js"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/IndexJs.js"></script>
+  </body>
 </html>

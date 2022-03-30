@@ -1,0 +1,105 @@
+body {
+  height: 100vh;
+}
+
+h1 {
+  color: #ff0da5;
+  text-align: center;
+}
+
+.etapas {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0px;
+}
+
+.etapaNome {
+  flex-direction: column;
+  text-align: center;
+}
+
+.etapaNome:hover {
+  cursor: pointer;
+}
+
+#Cliente {
+  background-image: url(/Client.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+#CS {
+  background-image: url(/CS.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+#Dev {
+  background-image: url(/Dev.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+#Adm {
+  background-image: url(/Adm.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.etapaNome.ativado {
+  flex-direction: column;
+  text-align: center;
+  color: #ff0da5;
+  transition: color 0.5s;
+  transition: transform 0.5s;
+  transform: scale(1.2);
+}
+
+.circulo {
+  margin: 30px 80px;
+  height: 100px;
+  width: 100px;
+  background-color: #888888;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circulo:hover {
+  cursor: pointer;
+}
+
+.circulo.ativado {
+  margin: 30px 80px;
+  height: 100px;
+  width: 100px;
+  background-color: #ff0da5;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s;
+}
+
+.imgDiv {
+  width: 100vw;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+}
+
+img {
+  width: 60%;
+}
+
+h2 {
+  font-weight: lighter;
+}
+
+b {
+  color: #ff0da5;
+}
+
+p {
+  margin: 40px 30px;
+}
